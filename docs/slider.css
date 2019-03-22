@@ -1,0 +1,27 @@
+:host .ce-input-slider-label {
+	min-width: 5rem;
+	min-height: 5rem;
+}
+
+:host .ce-input-slider-value {
+	cursor: pointer;
+}
+
+:host .ce-input-slider-display {
+	font-size: 3rem;
+	color: white;
+	cursor: pointer;
+}
+
+:host .ce-input-slider-value:hover + .ce-input-slider-display,
+:host .ce-input-slider-display:hover {
+	background-color: purple;
+}
+
+:host .ce-input-slider-value:checked + .ce-input-slider-display {
+	background-color: mediumpurple;
+}
+
+:host .ce-input-slider-value:not(:checked) + .ce-input-slider-display {
+	opacity: .8;
+}

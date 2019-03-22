@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Example</title>
+		<meta name="viewport" content="width=device-width">
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				font: 16px sans-serif;
+			}
+
+			body {
+				padding: 1em;
+			}
+
+			form {
+				width: 100%;
+				padding: 2em;
+			    border: 1px black solid;
+			}
+
+			label {
+				display: block;
+				margin: .5em 0;
+			}
+
+			input, select {
+				display: block;
+				width: 300px;
+				font-size: 1.2rem;
+				margin: .4rem auto;
+				padding: .4rem;
+			}
+
+			input-slider {
+				display: block;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="get">
+			<label for="range">
+				<input-slider centermode boundary="100">
+					<link slot="custom-stylesheet" href="slider.css" rel="stylesheet" />
+					<style slot="custom-style">
+						:host .ce-input-slider-container,
+						:host .ce-input-slider-label {
+							background: rebeccapurple;
+						}
+					</style>
+					<input
+						slot="input"
+						id="range" name="range" type="range"
+						min="0" max="9" step="1.5" value="3"
+					/>
+				</input-slider>
+			</label>
+
+			<input-slider>
+				<link slot="custom-stylesheet" href="slider.css" rel="stylesheet" />
+				<input
+					slot="input"
+					list="datalist-example"
+					id="datalist" name="datalist" type="text"
+					value="Pig"
+				/>
+				<datalist id="datalist-example">
+					<option value="Pig">🐷</option>
+					<option value="Cat">🐱</option>
+					<option value="Dog">🐶</option>
+					<option value="Sheep">🐑</option>
+					<option value="Cow">🐮</option>
+					<option value="Snake">🐍</option>
+					<option value="Dragon">🐉</option>
+					<option value="Sun">🌞</option>
+					<option value="Moon">🌝</option>
+				</datalist>
+			</input-slider>
+
+			<label for="select">
+				<input-slider>
+					<link slot="custom-stylesheet" href="slider.css" rel="stylesheet" />
+					<select
+						slot="input"
+						id="select" name="select"
+						value="Thinking Face"
+					/>
+						<option value="Thinking Face">🤔</option>
+						<option value="Face With Tears of Joy">😂</option>
+						<option value="Grinning Face">😀</option>
+						<option value="Smiling Face With Halo">😇</option>
+						<option value="Face With Tongue">😛</option>
+						<option value="Face With Rolling Eyes">🙄</option>
+						<option value="Face Without Mouth">😶</option>
+						<option value="Smiling Face With Sunglasses">😎</option>
+					</select>
+				</input-slider>
+			</label>
+			<input type="submit" />
+		</form>
+
+		<script src="../dist/polyfills.js"></script>
+		<script src="../dist/custom-element-input-slider.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
